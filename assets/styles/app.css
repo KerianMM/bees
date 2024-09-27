@@ -1,3 +1,47 @@
-body {
-    background-color: skyblue;
+.container {
+    display: flex;
+    gap: 8px;
+    width: 80%;
+    margin: auto;
+}
+
+.container>div {
+    background-color: #F3F3F3;
+    border: 2px solid #737373;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.container>div:first-child {
+    flex: 1;
+}
+
+.container>div:last-child {
+    flex: 2;
+}
+
+.bee-item {
+    margin-top: 8px;
+    color: green;
+}
+.bee-item.bee-item-dead {
+    color: red;
+}
+.bee-item.bee-item-hit {
+    color: orange;
+}
+
+.hit {
+    display: flex;
+    height: 100%;
+}
+.hit>button {
+    margin: auto;
+    padding: 30px;
+    background-color: red;
+    font-weight: bolder;
+    width: fit-content;
+    border-radius: 50%;
+    border: 5px solid black;
+    cursor: pointer;
 }

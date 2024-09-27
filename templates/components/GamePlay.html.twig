@@ -1,0 +1,24 @@
+<div class="container"{{ attributes }}>
+    <div>
+        {% for bee in this.bees %}
+            <div class="bee-item{% if not bee.isAlive %} bee-item-dead{% elseif bee.isHit %} bee-item-hit{% endif %}">
+                <strong>{{ bee }}</strong>
+                {{ bee.hitPoints }} / {{ bee.hitMax }}
+            </div>
+        {% endfor %}
+    </div>
+    <div>
+        {% if this.isGameOver %}
+            Game over ! <a href="{{ path('app_home') }}">Play again</a>
+        {% else %}
+            <div class="hit">
+                <button
+                    data-action="live#action"
+                    data-live-action-param="hit"
+                >
+                    HIT
+                </button>
+            </div>
+        {% endif %}
+    </div>
+</div>
